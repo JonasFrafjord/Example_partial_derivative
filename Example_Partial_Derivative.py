@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 def P_D(func, index, points):
     points_copy = points[:] #Copy points as not to alter the points
     def as_func_of(x):      #Need to input the function as a one variable function
-        point_copy[index] = x #The variable is the index'th element
+        points_copy[index] = x #The variable is the index'th element
         return func(*points_copy) #Now it is only a function of points[index]. Need star to input a list as arguments
     return derivative(as_func_of, points[index], dx = 1e-6) #See manual to scipy.misc.derivative
 
